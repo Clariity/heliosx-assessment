@@ -1,6 +1,6 @@
 # HeliosX Frontend Take Home Exercise
 
-This project was created for the HeliosX frontend take home exercise.
+This project was created for the HeliosX frontend take home exercise. You can view the application at: https://heliosx-assessment.vercel.app
 
 ## Tools used
 
