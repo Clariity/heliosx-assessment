@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# HeliosX Frontend Take Home Exercise
 
-## Getting Started
+This project was created for the HeliosX frontend take home exercise.
 
-First, run the development server:
+## Tools used
+
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwindcss](https://tailwindcss.com/) for styling
+- [Tanstack Query](https://tanstack.com/query/latest/) for caching and mutating state
+- [ESLint](https://eslint.org/) for static testing
+- [Jest](https://jestjs.io/) for unit testing
+- [Testing Library](https://testing-library.com/docs/react-testing-library/intro) for integration testing
+- [Playwright](https://playwright.dev/) for functional testing
+
+## Notes
+
+- The E2E test has a large amount of functionality cross-over with the integration test in the app folder. However I still decided to include it to show a more typical end-to-end flow of the application when deployed and in production as it is tested against the deployed URL.
+- Atomic design was the approach taken for components to [promote consistency and scalability](https://bradfrost.com/blog/post/atomic-web-design/#:~:text=construct%20our%20system.-,why%20atomic%20design,-In%20a%20lot).
+- Whilst no caching was utilised, nor HTTP requests sent, Tanstack Query was used to replicate how I would have implemented the call in a real situation.
+- The page is accessible and keyboard navigable.
+
+## Running the development server
+
+Prerequisites:
+
+- Node v18+
+- Git
+
+Install dependencies:
+
+```bash
+npm i
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Running tests
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Install dependencies:
 
-## Learn More
+```bash
+npm i
+```
 
-To learn more about Next.js, take a look at the following resources:
+Run tests:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Run static tests
+npm run test:static
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# Run unit and integration tests
+npm run test:unit
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# Run end-to-end tests
+npm run test:e2e
+```
